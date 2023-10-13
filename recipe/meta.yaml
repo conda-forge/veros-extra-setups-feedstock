@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/veros-extra-setups-{{ version }}.tar.gz
   sha256: b69367842b6409d881663672c50dd73a0c32914312a877a71484052257c23582
-  patches:
-    - req.patch
 
 build:
   noarch: python
