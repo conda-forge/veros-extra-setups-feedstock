@@ -1,18 +1,20 @@
 {% set name = "veros-extra-setups" %}
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
+{% set python_min = "3.10" %}
+
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/veros-extra-setups-{{ version }}.tar.gz
-  sha256: b69367842b6409d881663672c50dd73a0c32914312a877a71484052257c23582
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 4095cb4aae83f7a88f6b13e50e2f1a706490d7df713dce6c166efb0d0d0ee4c4
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -21,7 +23,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - veros =={{ version }}
+    - veros ==1.5.2
 
 test:
   imports:
