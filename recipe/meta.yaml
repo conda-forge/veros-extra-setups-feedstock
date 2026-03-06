@@ -1,5 +1,5 @@
 {% set name = "veros-extra-setups" %}
-{% set version = "1.6.0" %}
+{% set version = "1.6.2" %}
 {% set python_min = "3.10" %}
 
 
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 726d912e5bf6e2a3ab0511edecb31c2a32e593740b9acd232aecacd2205f3160
+  sha256: f894f55e5e3bfd853ea75858e8f0906353fb93d436ee54582eb429ac1fee8915
 
 build:
   noarch: python
@@ -23,7 +23,7 @@ requirements:
     - pip
   run:
     - python >={{ python_min }}
-    - veros ==1.6.1
+    - veros ==1.6.2
 
 test:
   imports:
